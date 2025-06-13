@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           {/* Left: Copyright */}
           <p className="text-sm text-gray-400 text-center md:text-left">
-          <span className="text-white font-medium">&copy; ${currentYear} Tiyara Innovations. All rights reserved.</span>
+          <span className="text-white font-medium">&copy; {currentYear} Tiyara Innovations. All rights reserved.</span>
           </p>
 
           {/* Right: Legal Links */}
