@@ -55,7 +55,7 @@ export default function Hero() {
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
                 <Button variant={"theme1"} asChild size="lg">
-                  <Link href="https://d1gw9htlygu8b6.cloudfront.net/">Start Renting Now</Link>
+                  <Link target="_blank" href="https://d1gw9htlygu8b6.cloudfront.net/">Start Renting Now</Link>
                 </Button>
                 <Button size="lg" variant="secondary" onClick={() => setIsVideoOpen(true)}>
                   <h1 className="flex items-center  gap-2">Watch Demo <PlayCircle /> </h1>
