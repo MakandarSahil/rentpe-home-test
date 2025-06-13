@@ -249,5 +249,5 @@ const CardSwap = forwardRef<CardSwapHandle, CardSwapProps>(({
   );
 });
 
-
+CardSwap.displayName = "CardSwap";
 export default CardSwap;
