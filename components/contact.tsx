@@ -107,7 +107,7 @@ export default function Contact() {
     {
       icon: Phone,
       title: "Call us",
-      value: "+91 12345 67890",
+      value: "+919579891114",
       description: "Speak with our experts",
       href: "tel:+919579891114",
     },
@@ -322,7 +322,7 @@ export default function Contact() {
               </form>
 
               {/* Follow Us section in main form area */}
-              <div className="mt-12 pt-8 border-t border-gray-200">
+              {/* <div className="mt-12 pt-8 border-t border-gray-200">
                 <h4 className="font-medium text-gray-900 mb-4">Follow us</h4>
                 <div className="flex gap-4">
                   {socials.map((social) => (
@@ -338,7 +338,7 @@ export default function Contact() {
                     </a>
                   ))}
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
 
