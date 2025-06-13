@@ -18,8 +18,6 @@ import {
   Phone,
   MapPin,
   Clock,
-  CheckCircle2,
-  XCircle,
   Loader2,
 } from "lucide-react";
 import { toast, Toaster } from "sonner";
@@ -74,7 +72,7 @@ export default function Contact() {
       await emailjs.send(`${serviceId}`, `${templateId}`, formData, `${publicKey}`);
       setStatus("success");
       toast.success("Message sent successfully!", {
-        description: "We'll get back to you within 24 hours.",
+        description: "We&apos;ll get back to you within 24 hours.",
       });
       setFormData({
         firstName: "",
@@ -102,29 +100,29 @@ export default function Contact() {
     {
       icon: Mail,
       title: "Email us",
-      value: "contact@rentp.com",
+      value: "ceo@rent-pe.co.in",
       description: "Get in touch with our team",
-      href: "mailto:contact@rentp.com",
+      href: "mailto:ceo@rent-pe.co.in",
     },
     {
       icon: Phone,
       title: "Call us",
       value: "+91 12345 67890",
       description: "Speak with our experts",
-      href: "tel:+911234567890",
+      href: "tel:+919579891114",
     },
     {
       icon: MapPin,
       title: "Visit us",
-      value: "Bangalore, India",
-      description: "123 Business Park, Koramangala",
+      value: " Kolhapur, Maharashtra",
+      description: "T.K Nagar Karvir Kolhapur",
       href: "https://maps.google.com",
     },
     {
       icon: Clock,
       title: "Business hours",
       value: "Mon-Fri 9AM–6PM IST",
-      description: "We're here to help",
+      description: "We&apos;re here to help",
     },
   ];
 
@@ -139,16 +137,6 @@ export default function Contact() {
         </svg>
       ),
     },
-    // {
-    //   label: "Twitter",
-    //   href: "https://twitter.com/rentpe",
-    //   color: "hover:text-blue-500",
-    //   svg: (
-    //     <svg fill="currentColor" className="w-5 h-5" viewBox="0 0 24 24">
-    //       <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
-    //     </svg>
-    //   ),
-    // },
     {
       label: "Facebook",
       href: `${facebookUrl}`,
@@ -178,7 +166,7 @@ export default function Contact() {
         <div className="text-center mb-16 animate-on-scroll translate-y-8 transition-all duration-1000">
           <h2 className="text-4xl font-light text-gray-900 mb-6">Contact us</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Ready to transform your business with intelligent rental solutions? Let's discuss your needs.
+            Ready to transform your business with intelligent rental solutions? Let&apos;s discuss your needs.
           </p>
         </div>
 
@@ -269,7 +257,7 @@ export default function Contact() {
                   </div>
                   <div className="space-y-2">
                     <label htmlFor="interest" className="block text-sm font-medium text-gray-700">
-                      I'm interested in *
+                      I&apos;m interested in *
                     </label>
                     <Select
                       value={formData.interest}

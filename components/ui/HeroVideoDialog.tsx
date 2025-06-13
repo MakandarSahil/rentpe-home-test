@@ -2,11 +2,8 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
-import { useState } from "react"; // Kept for the original thumbnail interaction, though it's now internal
 import { AnimatePresence, motion } from "framer-motion"; // Changed from motion/react to framer-motion as it's more standard
-import { Play, XIcon } from "lucide-react";
-
-import { cn } from "@/lib/utils";
+import { XIcon } from "lucide-react";
 
 type AnimationStyle =
   | "from-bottom"
@@ -73,9 +70,6 @@ const animationVariants = {
 export function HeroVideoDialog({
   animationStyle = "from-center",
   videoSrc,
-  thumbnailSrc, // This thumbnail is only relevant if HeroVideoDialog was clickable *before* being a modal
-  thumbnailAlt = "Video thumbnail",
-  className,
   onClose, // Destructure onClose prop
 }: HeroVideoProps) {
   // isVideoOpen state is now managed by the parent (Hero component)

@@ -1,18 +1,18 @@
 // components/Hero.jsx
 "use client"
+
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Check, Users, Shield, Zap, PlayCircle, Star } from "lucide-react"
 import { Iphone15Pro } from "@/components/ui/Iphone15pro"
 import { LineShadowText } from "./ui/LineShadowText"
 import { HeroVideoDialog } from "./ui/HeroVideoDialog"
-import { useState } from "react"
+import { useState, memo } from "react"
 import ServiceShowcase from "./ServiceShowcase"
-import { VelocityScroll } from "./ui/VelocityScroll"
 import ValueProposition from "./Value-Proposition"
 import Contact from "./contact"
 
-export default function Hero() {
+const Hero = memo(function Hero() {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
 
   return (
@@ -38,13 +38,9 @@ export default function Hero() {
               {/* Main Heading */}
               <div className="space-y-4 select-none">
                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight">
-                  Rent <LineShadowText className="italic" shadowColor={"white"}>
-                    Fast
-                  </LineShadowText>,
+                  Rent <LineShadowText className="italic" shadowColor={"white"}>Fast</LineShadowText>,
                   <span className="block bg-clip-text text-blue-400">
-                    Anytime, <LineShadowText className="italic" shadowColor={"white"}>
-                      Anywhere
-                    </LineShadowText>
+                    Anytime, <LineShadowText className="italic" shadowColor={"white"}>Anywhere</LineShadowText>
                   </span>
                 </h1>
                 <p className="text-lg sm:text-xl text-gray-300 max-w-lg mx-auto md:mx-0">
@@ -58,7 +54,7 @@ export default function Hero() {
                   <Link target="_blank" href="https://d1gw9htlygu8b6.cloudfront.net/">Start Renting Now</Link>
                 </Button>
                 <Button size="lg" variant="secondary" onClick={() => setIsVideoOpen(true)}>
-                  <h1 className="flex items-center  gap-2">Watch Demo <PlayCircle /> </h1>
+                  <h1 className="flex items-center gap-2">Watch Demo <PlayCircle /></h1>
                 </Button>
               </div>
 
@@ -111,42 +107,33 @@ export default function Hero() {
           </div>
         </div>
       </section>
+
       <ServiceShowcase />
-
       <ValueProposition />
-
       <Contact />
-
-      {/* <div className="relative flex w-full flex-col items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 text-white">
-        <VelocityScroll>Why to Buy When You Can Rent</VelocityScroll>
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background"></div>
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background"></div>
-      </div> */}
-
-      {/* <ServiceShowcase /> */}
 
       {isVideoOpen && (
         <>
-          {/* Light mode video thumbnail for dialog */}
           <HeroVideoDialog
             animationStyle="from-center"
             videoSrc="https://www.youtube.com/embed/qh3NGpYRG3I?si=4rb-zSdDkVK9qxxb"
             thumbnailSrc="https://startup-template-sage.vercel.app/hero-light.png"
             thumbnailAlt="Hero Video"
             className="block dark:hidden"
-            onClose={() => setIsVideoOpen(false)} // Pass close function
+            onClose={() => setIsVideoOpen(false)}
           />
-          {/* Dark mode video thumbnail for dialog */}
           <HeroVideoDialog
             animationStyle="from-center"
             videoSrc="https://www.youtube.com/embed/qh3NGpYRG3I?si=4rb-zSdDkVK9qxxb"
             thumbnailSrc="https://startup-template-sage.vercel.app/hero-dark.png"
             thumbnailAlt="Hero Video"
             className="hidden dark:block"
-            onClose={() => setIsVideoOpen(false)} // Pass close function
+            onClose={() => setIsVideoOpen(false)}
           />
         </>
       )}
     </>
-  )
-}
+  );
+});
+
+export default Hero;
